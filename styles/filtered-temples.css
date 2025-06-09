@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+header, footer {
+  background-color: #4a148c;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: #6a1b9a;
+  padding: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  background-color: #7b1fa2;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+#temples {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.temple-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.temple-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+}
+
+.temple-card h2 {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.temple-card p {
+  margin: 0.25rem 0;
+}
+
+footer {
+  font-size: 0.8rem;
+}

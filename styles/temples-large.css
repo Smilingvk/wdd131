@@ -1,0 +1,14 @@
+#hamburger {
+    display: none;
+  }
+  
+  nav {
+    display: flex !important;
+    justify-content: center;
+    flex-direction: row;
+  }
+  
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  

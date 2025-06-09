@@ -1,0 +1,71 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #444;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+  }
+  
+  #hamburger {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: none;
+    color: white;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    background-color: #666;
+  }
+  
+  nav a:hover {
+    background-color: #888;
+  }
+  
+  main {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  figure {
+    margin: 0;
+    text-align: center;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  footer {
+    background-color: #444;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  

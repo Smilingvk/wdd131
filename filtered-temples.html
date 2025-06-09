@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-</html><html lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,20 +10,22 @@
   <link rel="stylesheet" href="styles/filtered-temples-large.css" media="screen and (min-width: 768px)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lacquer&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <script src="scripts/filtered-temples.js" defer></script>
 </head>
 <body>
   <header>
     <h1>Temples of the Church</h1>
+    <nav>
+      <a href="#" onclick="filterTemples('old')">Old</a>
+      <a href="#" onclick="filterTemples('new')">New</a>
+      <a href="#" onclick="filterTemples('large')">Large</a>
+      <a href="#" onclick="filterTemples('small')">Small</a>
+      <a href="#" onclick="filterTemples('all')">Home</a>
+    </nav>
   </header>
-  <nav>
-    <a href="#" onclick="filterTemples('old')">Old</a>
-    <a href="#" onclick="filterTemples('new')">New</a>
-    <a href="#" onclick="filterTemples('large')">Large</a>
-    <a href="#" onclick="filterTemples('small')">Small</a>
-    <a href="#" onclick="filterTemples('all')">Home</a>
-  </nav>
 
   <main>
     <section id="temples" class="temple-container"></section>
@@ -32,3 +34,5 @@
   <footer>
     <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
   </footer>
+</body>
+</html>

@@ -127,7 +127,7 @@ main {
 /* Hero Section */
 .hero {
   background: linear-gradient(rgba(44, 24, 16, 0.7), rgba(139, 69, 19, 0.7)), 
-              url(/project/images/Chess-Club.jpg);
+              url("http://127.0.0.1:5500/project/images/Chess-Club.jpg");
   background-size: cover;
   background-position: center;
   color: var(--white);

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Chess Club - Site Plan</title>
+  <meta name="description" content="Planning document for Royal Chess Club website, including branding, structure, and design guidelines.">
+  <style>
+    /* Color Schema */
+    :root {
+      --primary-color: #2c1810;
+      --secondary-color: #8b4513;
+      --accent-color: #daa520;
+      --light-bg: #f5f5dc;
+      --white: #ffffff;
+      --text-dark: #333333;
+      --text-light: #666666;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      line-height: 1.6;
+      margin: 1rem;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-color);
+      margin-top: 2rem;
+    }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; color: var(--secondary-color); }
+    .color-swatch { display: inline-block; width: 1.5rem; height: 1.5rem; margin-right: 0.5rem; vertical-align: middle; border: 1px solid #ccc; }
+    .wireframe { border: 2px dashed var(--primary-color); padding: 1rem; margin: 1rem 0; }
+    .wireframe .box { background: #eee; padding: 0.5rem; margin: 0.5rem 0; text-align: center; }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Royal Chess Club</h1>
+  <section id="site-name">
+    <h2>Site Name &amp; Logo</h2>
+    <p><strong>Royal Chess Club</strong> – A distinguished name reflecting our commitment to excellence in chess. Logo will feature a stylized king’s crown and chess piece silhouette.</p>
+  </section>
+
+  <section id="purpose">
+    <h2>Site Purpose</h2>
+    <p>The website will provide:</p>
+    <ul>
+      <li>Information on club mission, history, and instructors</li>
+      <li>Interactive features: chess board, statistics, tournament brackets</li>
+      <li>Membership application and management</li>
+      <li>Resources: articles, tutorials, event calendar</li>
+    </ul>
+  </section>
+
+  <section id="scenarios">
+    <h2>User Scenarios</h2>
+    <ol>
+      <li>As a beginner, <em>where can I sign up for a beginner chess class?</em></li>
+      <li>As a tournament player, <em>how do I view upcoming tournament brackets?</em></li>
+      <li>As a parent, <em>how can I enroll my child in the youth program?</em></li>
+    </ol>
+  </section>
+
+  <section id="color-schema">
+    <h2>Color Schema</h2>
+    <ul>
+      <li><span class="color-swatch" style="background: var(--primary-color)"></span><code>--primary-color: #2c1810</code> – Headings, primary buttons</li>
+      <li><span class="color-swatch" style="background: var(--secondary-color)"></span><code>--secondary-color: #8b4513</code> – Section headings, borders</li>
+      <li><span class="color-swatch" style="background: var(--accent-color)"></span><code>--accent-color: #daa520</code> – CTAs, highlights</li>
+      <li><span class="color-swatch" style="background: var(--light-bg)"></span><code>--light-bg: #f5f5dc</code> – Section backgrounds</li>
+      <li><span class="color-swatch" style="background: var(--white)"></span><code>--white: #ffffff</code> – Page background</li>
+    </ul>
+  </section>
+
+  <section id="typography">
+    <h2>Typography</h2>
+    <ul>
+      <li><strong>Playfair Display</strong> – Used for all headings (H1, H2, H3)</li>
+      <li><strong>Open Sans</strong> – Used for body text, navigation, buttons</li>
+    </ul>
+  </section>
+
+  <section id="wireframes">
+    <h2>Wireframes</h2>
+    <h3>Mobile View</h3>
+    <div class="wireframe">
+      <div class="box">Logo + Menu Toggle</div>
+      <div class="box">Hero Section</div>
+      <div class="box">Features Cards</div>
+      <div class="box">Interactive Board</div>
+      <div class="box">Membership Form</div>
+      <div class="box">Footer</div>
+    </div>
+
+    <h3>Desktop View</h3>
+    <div class="wireframe">
+      <div class="box">Logo + Horizontal Nav</div>
+      <div class="box">Hero &amp; CTA</div>
+      <div class="box" style="display: flex; justify-content: space-between;">Features | Board | Stats</div>
+      <div class="box">Tournament Bracket</div>
+      <div class="box">Membership Form</div>
+      <div class="box">Footer Links</div>
+    </div>
+  </section>
+
+  <section id="testing">
+    <h2>Testing &amp; Validation</h2>
+    <p>Plan to validate:</p>
+    <ul>
+      <li>HTML/CSS W3C validation</li>
+      <li>Accessibility (ARIA roles, WAVE)</li>
+      <li>Color contrast checks</li>
+      <li>Responsive layout on multiple viewports</li>
+      <li>Performance audit (Lighthouse)</li>
+    </ul>
+  </section>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Review Submitted</title>
+  <link rel="stylesheet" href="styles/form.css">
+  <script src="scripts/form.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Thank You!</h1>
+    <p>Your review has been submitted successfully.</p>
+    <p>You have submitted <span id="reviewCount">0</span> reviews.</p>
+  </main>
+
+  <script>
+    let count = localStorage.getItem("reviewCount");
+    count = count ? parseInt(count) + 1 : 1;
+    localStorage.setItem("reviewCount", count);
+    document.getElementById("reviewCount").textContent = count;
+  </script>
+</body>
+</html>

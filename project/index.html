@@ -1,46 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chess Club Central</title>
-  <link rel="stylesheet" href="/project/styles/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lacquer&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <script defer src="/project/scripts/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Chess Club - Master Your Game</title>
+    <meta name="description" content="Join Royal Chess Club - Learn, play, and compete with fellow chess enthusiasts. Classes for all skill levels, tournaments, and community events.">
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script defer src="scripts/script.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Chess Club</h1>
-    <img src="images/club-logo.png" alt="Chess Club Central Logo" class="logo" loading="lazy" />
-    <nav>
-      <ul>
-        <li><a href=" .html">Home</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="members.html">Members</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero">
-        <img src="images/Chess-Club.jpg" alt="Chess pieces on board" class="hero-img" loading="lazy" />
-        <div class="hero-text">
-          <h2>Welcome to Chess Club Central</h2>
-          <p>Your hub for community tournaments, resources, and member activities.</p>
-          <button id="joinBtn">Join the Club</button>
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="#" class="logo" aria-label="Royal Chess Club Home">♔ Royal Chess Club</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" class="nav-link active" data-page="home" aria-current="page">Home</a></li>
+                <li><a href="#" class="nav-link" data-page="about">About</a></li>
+                <li><a href="#" class="nav-link" data-page="join">Join Us</a></li>
+                <li><a href="#" class="nav-link" data-page="references">References</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">☰</button>
         </div>
-    </section>
-    <section class="featured">
-        <h3>Featured Member of the Month</h3>
-        <div id="featuredMember" class="member-card"></div>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 Chess Club Central</p>
-    <a href="references.html">References</a>
-  </footer>
+    </nav>
+
+    <!-- Main Content -->
+    <main role="main">
+        <!-- Home Page -->
+        <div id="home" class="page-content active">
+            <!-- Hero Section -->
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="container">
+                    <div class="hero-content lazy-load">
+                        <h1 id="hero-title">Master the Art of Chess</h1>
+                        <p>Join our vibrant community of chess enthusiasts. Learn strategies, compete in tournaments, and elevate your game to new heights.</p>
+                        <a href="#" class="cta-button" data-page="join" role="button">Join Our Club Today</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="section" aria-labelledby="features-title">
+                <div class="container">
+                    <h2 id="features-title" class="lazy-load">Why Choose Royal Chess Club?</h2>
+                    <div class="cards-grid">
+                        <div class="card lazy-load">
+                            <div class="card-icon">♕</div>
+                            <h3>Expert Coaching</h3>
+                            <p>Learn from certified chess masters and improve your game with personalized instruction tailored to your skill level.</p>
+                        </div>
+                        <div class="card lazy-load">
+                            <div class="card-icon">🏆</div>
+                            <h3>Tournaments</h3>
+                            <p>Participate in regular tournaments and competitions. Test your skills against players of all levels in a friendly environment.</p>
+                        </div>
+                        <div class="card lazy-load">
+                            <div class="card-icon">👥</div>
+                            <h3>Community</h3>
+                            <p>Connect with fellow chess lovers, make lasting friendships, and be part of a supportive chess community.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Chess Board -->
+            <section class="section" style="background: var(--light-bg);" aria-labelledby="board-title">
+                <div class="container">
+                    <h2 id="board-title" class="lazy-load">Interactive Chess Board</h2>
+                    <p style="text-align: center; margin-bottom: 2rem;">Click on the squares to see chess pieces! Try clicking different squares to explore.</p>
+                    <div class="chess-board lazy-load" id="chessBoard" role="grid" aria-label="Interactive chess board">
+                        <!-- Chess board squares will be generated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Club Statistics -->
+            <section class="section" aria-labelledby="stats-title">
+                <div class="container">
+                    <h2 id="stats-title" class="lazy-load">Club Statistics</h2>
+                    <div class="stats-container">
+                        <div class="stat-item lazy-load">
+                            <span class="stat-number" id="memberCount">250</span>
+                            <div class="stat-label">Active Members</div>
+                        </div>
+                        <div class="stat-item lazy-load">
+                            <span class="stat-number" id="tournamentCount">52</span>
+                            <div class="stat-label">Tournaments Held</div>
+                        </div>
+                        <div class="stat-item lazy-load">
+                            <span class="stat-number" id="yearsActive">15</span>
+                            <div class="stat-label">Years Active</div>
+                        </div>
+                        <div class="stat-item lazy-load">
+                            <span class="stat-number" id="masterCount">8</span>
+                            <div class="stat-label">Chess Masters</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page-content">
+            <section class="section" style="margin-top: 2rem;" aria-labelledby="about-title">
+                <div class="container">
+                    <h1 id="about-title" class="lazy-load">About Royal Chess Club</h1>
+                    
+                    <div class="lazy-load" style="margin: 3rem 0;">
+                        <h2>Our Story</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                            Founded in 2009, Royal Chess Club has been the premier destination for chess enthusiasts in our community. 
+                            What started as a small group of passionate players meeting in a local library has grown into a thriving 
+                            organization with over 250 active members ranging from beginners to grandmasters.
+                        </p>
+                        
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                            Our mission is to promote the ancient game of chess as both an intellectual pursuit and a means of 
+                            building community connections. We believe chess teaches valuable life skills including strategic thinking, 
+                            patience, and graceful handling of both victory and defeat.
+                        </p>
+                    </div>
+
+                    <div class="lazy-load" style="margin: 3rem 0;">
+                        <h2>Our Programs</h2>
+                        <div class="cards-grid">
+                            <div class="card">
+                                <h3>Beginner Classes</h3>
+                                <p>Learn the fundamentals of chess in a supportive environment. Perfect for those just starting their chess journey.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Advanced Training</h3>
+                                <p>Intensive coaching sessions for serious players looking to compete at higher levels and achieve ratings.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Youth Program</h3>
+                                <p>Special programs designed for children and teenagers, focusing on fun learning and character development.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Senior League</h3>
+                                <p>A welcoming environment for older adults to enjoy chess at a comfortable pace with peers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lazy-load" style="margin: 3rem 0;">
+                        <h2>Tournament Results</h2>
+                        <div class="tournament-bracket">
+                            <div class="bracket-round">
+                                <div class="bracket-match winner">
+                                    <h4>Spring Championship 2024</h4>
+                                    <p><strong>Winner:</strong> Alexandra Chen</p>
+                                    <p>Rating: 2150</p>
+                                </div>
+                            </div>
+                            <div class="bracket-round">
+                                <div class="bracket-match">
+                                    <h4>Summer Blitz Tournament</h4>
+                                    <p><strong>Winner:</strong> Marcus Rodriguez</p>
+                                    <p>Games Won: 8/9</p>
+                                </div>
+                            </div>
+                            <div class="bracket-round">
+                                <div class="bracket-match winner">
+                                    <h4>Fall Classical Event</h4>
+                                    <p><strong>Winner:</strong> Sarah Johnson</p>
+                                    <p>Perfect Score: 6/6</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lazy-load" style="margin: 3rem 0;">
+                        <h2>Meet Our Instructors</h2>
+                        <div class="cards-grid">
+                            <div class="card">
+                                <h3>GM Robert Anderson</h3>
+                                <p><strong>Head Instructor & Founder</strong></p>
+                                <p>International Grandmaster with 30+ years of teaching experience. FIDE rating: 2650.</p>
+                            </div>
+                            <div class="card">
+                                <h3>IM Patricia Wong</h3>
+                                <p><strong>Youth Program Director</strong></p>
+                                <p>International Master specializing in youth development and scholastic chess programs.</p>
+                            </div>
+                            <div class="card">
+                                <h3>FM David Thompson</h3>
+                                <p><strong>Beginner Program Coordinator</strong></p>
+                                <p>FIDE Master with a passion for introducing new players to the beautiful game of chess.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Join Us Page -->
+        <div id="join" class="page-content">
+            <section class="section" style="margin-top: 2rem;" aria-labelledby="join-title">
+                <div class="container">
+                    <h1 id="join-title" class="lazy-load">Join Royal Chess Club</h1>
+                    
+                    <div class="form-container lazy-load">
+                        <h2>Membership Application</h2>
+                        <p style="margin-bottom: 2rem; color: var(--text-light);">
+                            Fill out the form below to apply for membership. All skill levels are welcome!
+                        </p>
+                        
+                        <form id="membershipForm" novalidate>
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" required 
+                                       aria-describedby="fullName-error">
+                                <div class="error-message" id="fullName-error" role="alert"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required 
+                                       aria-describedby="email-error">
+                                <div class="error-message" id="email-error" role="alert"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" 
+                                       aria-describedby="phone-error">
+                                <div class="error-message" id="phone-error" role="alert"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="age">Age *</label>
+                                <input type="number" id="age" name="age" min="5" max="100" required 
+                                       aria-describedby="age-error">
+                                <div class="error-message" id="age-error" role="alert"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="experience">Chess Experience Level *</label>
+                                <select id="experience" name="experience" required 
+                                        aria-describedby="experience-error">
+                                    <option value="">Select your level</option>
+                                    <option value="beginner">Beginner (Just learning)</option>
+                                    <option value="novice">Novice (Know the rules)</option>
+                                    <option value="intermediate">Intermediate (Some tournament experience)</option>
+                                    <option value="advanced">Advanced (Rated player)</option>
+                                    <option value="expert">Expert (High-level competition)</option>
+                                </select>
+                                <div class="error-message" id="experience-error" role="alert"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="interests">Areas of Interest (Check all that apply)</label>
+                                <div style="margin-top: 0.5rem;">
+                                    <label style="display: flex; align-items: center; margin-bottom: 0.5rem; font-weight: normal;">
+                                        <input type="checkbox" name="interests" value="tournaments" style="margin-right: 0.5rem; width: auto;">
+                                        Tournament Play
+                                    </label>
+                                    <label style="display: flex; align-items: center; margin-bottom: 0.5rem; font-weight: normal;">
+                                        <input type="checkbox" name="interests" value="lessons" style="margin-right: 0.5rem; width: auto;">
+                                        Private Lessons
+                                    </label>
+                                    <label style="display: flex; align-items: center; margin-bottom: 0.5rem; font-weight: normal;">
+                                        <input type="checkbox" name="interests" value="casual" style="margin-right: 0.5rem; width: auto;">
+                                        Casual Games
+                                    </label>
+                                    <label style="display: flex; align-items: center; margin-bottom: 0.5rem; font-weight: normal;">
+                                        <input type="checkbox" name="interests" value="analysis" style="margin-right: 0.5rem; width: auto;">
+                                        Game Analysis
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="membership">Membership Type *</label>
+                                <select id="membership" name="membership" required 
+                                        aria-describedby="membership-error">
+                                    <option value="">Select membership type</option>
+                                    <option value="student">Student ($25/month)</option>
+                                    <option value="adult">Adult ($40/month)</option>
+                                    <option value="senior">Senior (65+) ($30/month)</option>
+                                    <option value="family">Family (4+ members) ($100/month)</option>
+                                </select>
+                                <div class="error-message" id="membership-error" role="alert"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="comments">Additional Comments</label>
+                                <textarea id="comments" name="comments" rows="4" 
+                                         placeholder="Tell us about your chess goals or any questions you have..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label style="display: flex; align-items: center; font-weight: normal;">
+                                    <input type="checkbox" id="newsletter" name="newsletter" style="margin-right: 0.5rem; width: auto;">
+                                    Subscribe to our monthly newsletter with chess tips and club updates
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label style="display: flex; align-items: center; font-weight: normal;">
+                                    <input type="checkbox" id="terms" name="terms" required style="margin-right: 0.5rem; width: auto;">
+                                    I agree to the club rules and code of conduct *
+                                </label>
+                                <div class="error-message" id="terms-error" role="alert"></div>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Submit Application</button>
+                        </form>
+
+                        <div id="formSuccess" style="display: none; text-align: center; margin-top: 2rem;">
+                            <h3 style="color: var(--success-color);">Application Submitted Successfully!</h3>
+                            <p>Thank you for your interest in Royal Chess Club. We'll contact you within 48 hours.</p>
+                        </div>
+                    </div>
+
+                    <div class="lazy-load" style="margin-top: 4rem;">
+                        <h2>Membership Benefits</h2>
+                        <div class="cards-grid">
+                            <div class="card">
+                                <div class="card-icon">🎯</div>
+                                <h3>Unlimited Play</h3>
+                                <p>Access to our club facilities 7 days a week with unlimited casual games and practice sessions.</p>
+                            </div>
+                            <div class="card">
+                                <div class="card-icon">📚</div>
+                                <h3>Learning Resources</h3>
+                                <p>Extensive chess library, online database access, and exclusive educational materials.</p>
+                            </div>
+                            <div class="card">
+                                <div class="card-icon">🏅</div>
+                                <h3>Tournament Entry</h3>
+                                <p>Free entry to monthly club tournaments and discounted rates for external competitions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- References Page -->
+        <div id="references" class="page-content">
+            <section class="section" style="margin-top: 2rem;" aria-labelledby="references-title">
+                <div class="container">
+                    <h1 id="references-title" class="lazy-load">References & Sources</h1>
+                    
+                    <div class="lazy-load" style="max-width: 800px; margin: 0 auto;">
+                        <h2>Content Sources</h2>
+                        <p style="margin-bottom: 2rem; color: var(--text-light);">
+                            This website was created for educational purposes. The following sources were referenced for content and inspiration:
+                        </p>
+                        
+                        <div style="background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                            <h3>Chess Information & Rules</h3>
+                            <ul style="margin: 1rem 0; padding-left: 2rem; line-height: 1.8;">
+                                <li>FIDE (World Chess Federation) - Official Rules and Regulations</li>
+                                <li>Chess.com - Educational articles and game statistics</li>
+                                <li>United States Chess Federation (USCF) - Tournament guidelines and rating system information</li>
+                            </ul>
+
+                            <h3>Images & Icons</h3>
+                            <ul style="margin: 1rem 0; padding-left: 2rem; line-height: 1.8;">
+                                <li>Chess piece Unicode symbols - Standard Unicode Consortium</li>
+                                <li>CSS background patterns - Custom SVG implementation</li>
+                                <li>Icon designs - Original CSS implementations using Unicode symbols</li>
+                            </ul>
+
+                            <h3>Typography & Design Inspiration</h3>
+                            <ul style="margin: 1rem 0; padding-left: 2rem; line-height: 1.8;">
+                                <li>Google Fonts - Playfair Display and Open Sans font families</li>
+                                <li>Modern web design principles from various CSS design resources</li>
+                                <li>Accessibility guidelines from W3C Web Accessibility Initiative (WAI)</li>
+                            </ul>
+
+                            <h3>Technical Implementation</h3>
+                            <ul style="margin: 1rem 0; padding-left: 2rem; line-height: 1.8;">
+                                <li>HTML5 semantic elements and best practices</li>
+                                <li>CSS Grid and Flexbox layout techniques</li>
+                                <li>JavaScript ES6+ features and DOM manipulation methods</li>
+                                <li>Web accessibility standards (WCAG 2.1 guidelines)</li>
+                            </ul>
+
+                            <h3>Educational References</h3>
+                            <ul style="margin: 1rem 0; padding-left: 2rem; line-height: 1.8;">
+                                <li>Mozilla Developer Network (MDN) - Web development documentation</li>
+                                <li>W3Schools - HTML, CSS, and JavaScript tutorials</li>
+                                <li>CSS-Tricks - Advanced CSS techniques and best practices</li>
+                            </ul>
+
+                            <div style="margin-top: 2rem; padding: 1rem; background: var(--light-bg); border-radius: 5px;">
+                                <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">
+                                    <strong>Note:</strong> This website is a student project created for educational purposes. 
+                                    All content is original or used under fair use guidelines. No commercial use is intended. 
+                                    Chess piece symbols and basic chess concepts are public domain.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <p>&copy; 2024 Royal Chess Club. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" data-page="references">References</a>
+                <a href="mailto:info@royalchessclub.com">Contact Us</a>
+                <a href="#" aria-label="Visit our social media">Social Media</a>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #999;">
+                Designed and developed for educational purposes | Student Web Development Project 2024
+            </p>
+        </div>
+    </footer>
 </body>
 </html>

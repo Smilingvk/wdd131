@@ -1,0 +1,311 @@
+:root {
+    --primary-color: #c41e3a; /* Red from Peru flag */
+    --secondary-color: #ffffff; /* White from Peru flag */
+    --accent-color: #ffd700; /* Gold accent */
+    --text-dark: #2c3e50;
+    --text-light: #666666;
+    --background-light: #f8f9fa;
+    --border-color: #ddd;
+    --shadow: 0 2px 4px rgba(0,0,0,0.1);
+    --border-radius: 4px;
+    --max-width: 1200px;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--primary-color), #a91b2e);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Hero Container */
+.hero-container {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+.hero {
+    width: 100%;
+}
+
+.hero img {
+    background-image: url(/images/experiencias-machu-picchu_wide.jpg);
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Overlay sections for desktop */
+.overlay-sections {
+    display: none;
+}
+
+/* Main Content */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Mobile Content Container */
+.mobile-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Mobile-only sections */
+.mobile-only {
+    display: block;
+}
+
+/* Description positioning */
+.description {
+    margin: 1rem;
+}
+
+/* Section Base Styling */
+section {
+    background: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+section h2 {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    margin: 0;
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+/* Data Section */
+.data-list {
+    padding: 1rem;
+}
+
+.data-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.data-item:last-child {
+    border-bottom: none;
+}
+
+.data-item .label {
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.data-item .value {
+    color: var(--text-light);
+}
+
+/* Weather Section */
+.weather {
+    position: relative;
+}
+
+.weather-icon-mobile {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    z-index: 1;
+}
+
+.weather-details {
+    padding: 1rem;
+    padding-right: 4rem; /* Make room for mobile icon */
+}
+
+.weather-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.weather-item .label {
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.weather-item .value {
+    color: var(--text-light);
+}
+
+/* Weather pseudo-element for larger screens */
+.weather h2::after {
+    content: "⛅";
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    display: none;
+}
+
+/* Description Section */
+.description {
+    padding: 1rem;
+    text-align: justify;
+}
+
+.description p {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.description p:last-child {
+    margin-bottom: 0;
+}
+
+/* Footer */
+footer {
+    background: var(--text-dark);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Media Query for Larger Screens (Tablet and Desktop) */
+@media (min-width: 768px) {
+    /* Header */
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Hero Image */
+    .hero img {
+        height: 500px;
+    }
+
+    /* Hide mobile sections */
+    .mobile-only {
+        display: none;
+    }
+
+    .mobile-content {
+        display: none;
+    }
+
+    /* Show overlay sections */
+    .overlay-sections {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        right: 2rem;
+        bottom: 2rem;
+        pointer-events: none;
+    }
+
+    .overlay-sections section {
+        pointer-events: all;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(5px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Position Data section (top-left) */
+    .overlay-sections .data {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 280px;
+    }
+
+    /* Position Weather section (bottom-right) */
+    .overlay-sections .weather {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 280px;
+    }
+
+    /* Weather icon changes */
+    .weather-icon-mobile {
+        display: none;
+    }
+
+    .weather h2::after {
+        display: inline;
+    }
+
+    .weather-details {
+        padding-right: 1rem;
+    }
+
+    /* Description section positioning */
+    .description {
+        margin: 2rem;
+        background: var(--secondary-color);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        padding: 2rem;
+    }
+}
+
+/* Large Desktop Layout */
+@media (min-width: 1024px) {
+    .hero img {
+        height: 400px;
+    }
+
+    .content-container {
+        padding: 3rem;
+    }
+
+    .data, .weather {
+        flex: 0 0 280px;
+    }
+}
+
+/* Accessibility and Focus States */
+a:focus,
+button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --shadow: 0 2px 4px rgba(0,0,0,0.3);
+        --border-color: #999;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

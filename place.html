@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals – Valeria’s form" />
+  <meta name="author" content="Valeria – Peru" />
+  <title>WDD 131: Dynamic Web Fundamentals – Valeria</title>
+    <meta name="description" content="Discover Peru, a country rich in history, culture, and natural beauty">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Peru</h1>
+    </header>
+
+    <main>
+        <!-- Hero Section with Overlaid Data and Weather (Desktop) -->
+        <section class="hero-container">
+            <div class="hero">
+                <picture>
+                    <source media="(max-width: 767px)" srcset="images/peru-hero-small.webp">
+                    <source media="(min-width: 768px)" srcset="images/peru-hero-large.webp">
+                    <img src="/images/experiencias-machu-picchu_wide.jpg">
+                </picture>
+            </div>
+
+            <!-- Overlaid Data and Weather Sections (Desktop Only) -->
+            <div class="overlay-sections">
+                <!-- Data Section -->
+                <section class="data">
+                    <h2>Data</h2>
+                    <div class="data-list">
+                        <div class="data-item">
+                            <span class="label">Area:</span>
+                            <span class="value">1,285,216 km²</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="label">Population:</span>
+                            <span class="value">33,400,000</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="label">Capital:</span>
+                            <span class="value">Lima</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="label">Languages:</span>
+                            <span class="value">Spanish, Quechua</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="label">Currency:</span>
+                            <span class="value">Peruvian Sol</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="label">Time Zone:</span>
+                            <span class="value">PET (UTC-5)</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="label">Calling Code:</span>
+                            <span class="value">+51</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="label">Internet TLD:</span>
+                            <span class="value">.pe</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Weather Section -->
+                <section class="weather">
+                    <h2>Weather</h2>
+                    <div class="weather-icon-mobile">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="5" stroke="#FFD700" stroke-width="2" fill="#FFD700" opacity="0.3"/>
+                            <path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22" stroke="#FFD700" stroke-width="2"/>
+                            <ellipse cx="8" cy="16" rx="3" ry="2" fill="#87CEEB" opacity="0.7"/>
+                            <ellipse cx="16" cy="18" rx="2.5" ry="1.5" fill="#87CEEB" opacity="0.7"/>
+                        </svg>
+                    </div>
+                    <div class="weather-details">
+                        <div class="weather-item">
+                            <span class="label">Temperature:</span>
+                            <span class="value" id="temperature">8°C</span>
+                        </div>
+                        <div class="weather-item">
+                            <span class="label">Conditions:</span>
+                            <span class="value">Partly Cloudy</span>
+                        </div>
+                        <div class="weather-item">
+                            <span class="label">Wind:</span>
+                            <span class="value" id="wind-speed">12 km/h</span>
+                        </div>
+                        <div class="weather-item">
+                            <span class="label">Wind Chill:</span>
+                            <span class="value" id="wind-chill">Loading...</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Mobile Content Container -->
+        <div class="mobile-content">
+            <!-- Data Section (Mobile Only) -->
+            <section class="data mobile-only">
+                <h2>Data</h2>
+                <div class="data-list">
+                    <div class="data-item">
+                        <span class="label">Area:</span>
+                        <span class="value">1,285,216 km²</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Population:</span>
+                        <span class="value">33,400,000</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Capital:</span>
+                        <span class="value">Lima</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Languages:</span>
+                        <span class="value">Spanish, Quechua</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Currency:</span>
+                        <span class="value">Peruvian Sol</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Time Zone:</span>
+                        <span class="value">PET (UTC-5)</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Calling Code:</span>
+                        <span class="value">+51</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Internet TLD:</span>
+                        <span class="value">.pe</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Weather Section (Mobile Only) -->
+            <section class="weather mobile-only">
+                <h2>Weather</h2>
+                <div class="weather-icon-mobile">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="5" stroke="#FFD700" stroke-width="2" fill="#FFD700" opacity="0.3"/>
+                        <path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22" stroke="#FFD700" stroke-width="2"/>
+                        <ellipse cx="8" cy="16" rx="3" ry="2" fill="#87CEEB" opacity="0.7"/>
+                        <ellipse cx="16" cy="18" rx="2.5" ry="1.5" fill="#87CEEB" opacity="0.7"/>
+                    </svg>
+                </div>
+                <div class="weather-details">
+                    <div class="weather-item">
+                        <span class="label">Temperature:</span>
+                        <span class="value">8°C</span>
+                    </div>
+                    <div class="weather-item">
+                        <span class="label">Conditions:</span>
+                        <span class="value">Partly Cloudy</span>
+                    </div>
+                    <div class="weather-item">
+                        <span class="label">Wind:</span>
+                        <span class="value">12 km/h</span>
+                    </div>
+                    <div class="weather-item">
+                        <span class="label">Wind Chill:</span>
+                        <span class="value" id="wind-chill-mobile">Loading...</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Description Section -->
+        <section class="description">
+            <p>Peru is a country in western South America. It is bordered by Ecuador and Colombia to the north, Brazil to the east, Bolivia to the southeast, Chile to the south, and the Pacific Ocean to the west. Peru is a megadiverse country with habitats ranging from the arid plains of the Pacific coastal region in the west to the peaks of the Andes mountains extending from the north to the southeast of the country to the tropical Amazon Basin rainforest in the east with the Amazon river.</p>
+            
+            <p>The sovereign state of Peru is a representative democratic republic divided into 25 regions. Peru is a developing country, ranking 82nd on the Human Development Index, with a high level of human development with an upper middle income level and a poverty rate around 19 percent. It is one of the region's most prosperous economies with an average growth rate of 5.9% and it has one of the world's fastest industrial growth rates at an average of 9.6%.</p>
+            
+            <p>Peru is famous for Machu Picchu, the ancient Inca citadel located high in the Andes Mountains. The country is also known for its diverse geography, rich history, and vibrant culture that blends indigenous traditions with Spanish colonial influences.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Peru Travel Guide | Last Modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>

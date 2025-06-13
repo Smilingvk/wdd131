@@ -51,7 +51,7 @@ header h1 {
 }
 
 .hero img {
-    background-image: url(/images/experiencias-machu-picchu_wide.jpg);
+    background-image: url(/images/images.jpeg);
     width: 100%;
     height: 250px;
     object-fit: cover;
@@ -294,7 +294,7 @@ button:focus {
 }
 
 /* High contrast mode support */
-@media (prefers-contrast: high) {
+@media (prefers-contrast:after) {
     :root {
         --shadow: 0 2px 4px rgba(0,0,0,0.3);
         --border-color: #999;

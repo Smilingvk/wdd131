@@ -68,4 +68,20 @@ body {
     text-align: center;
     padding: 1rem;
   }
+  @media (min-width: 768px) {
+    nav {
+      display: flex !important; 
+      flex-direction: row;
+      justify-content: center;
+      background-color: #444;
+    }
+  
+    #hamburger {
+      display: none; 
+    }
+  
+    .container {
+      grid-template-columns: repeat(3, 1fr); 
+    }
+  }
   
